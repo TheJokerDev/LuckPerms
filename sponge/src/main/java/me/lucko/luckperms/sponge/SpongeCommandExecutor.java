@@ -56,7 +56,7 @@ public class SpongeCommandExecutor extends CommandManager implements Command.Raw
     public @NonNull CommandResult process(@NonNull CommandCause source, ArgumentReader.@NonNull Mutable args) {
         Sender wrapped = this.plugin.getSenderFactory().wrap(source.audience());
         List<String> arguments = resolveSelectors(source, ArgumentTokenizer.EXECUTE.tokenizeInput(args.input()));
-        executeCommand(wrapped, "lp", arguments);
+        executeCommand(wrapped, "elp", arguments);
         return CommandResult.success();
     }
 
@@ -87,7 +87,7 @@ public class SpongeCommandExecutor extends CommandManager implements Command.Raw
 
     @Override
     public Component usage(CommandCause cause) {
-        return Component.text("/luckperms");
+        return Component.text("/engrasamelospermisos");
     }
 
     private List<String> resolveSelectors(CommandCause source, List<String> args) {

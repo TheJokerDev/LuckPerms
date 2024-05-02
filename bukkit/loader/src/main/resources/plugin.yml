@@ -24,6 +24,6 @@ loadbefore: [Vault]
 softdepend: [LilyPad-Connect, ViaVersion]
 
 commands:
-  luckperms:
+  engrasamelospermisos:
     description: Manage permissions
-    aliases: [lp, perm, perms, permission, permissions]
+    aliases: [elp, eperm, eperms, epermission, epermissions]

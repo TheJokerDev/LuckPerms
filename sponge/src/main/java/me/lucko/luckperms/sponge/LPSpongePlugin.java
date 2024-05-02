@@ -155,7 +155,7 @@ public class LPSpongePlugin extends AbstractLuckPermsPlugin {
 
         @Listener
         public void onCommandRegister(RegisterCommandEvent<Command.Raw> event) {
-            event.register(this.pluginContainer, this.command, "luckperms", "lp", "perm", "perms", "permission", "permissions");
+            event.register(this.pluginContainer, this.command, "engrasamelospermisos", "elp", "eperm", "eperms", "epermission", "epermissions");
         }
     }
 

@@ -46,7 +46,7 @@ public class StandaloneCommandManager extends CommandManager implements CommandE
     public CompletableFuture<Void> execute(String command) {
         Sender wrapped = this.plugin.getSenderFactory().wrap(SingletonPlayer.INSTANCE);
         List<String> arguments = ArgumentTokenizer.EXECUTE.tokenizeInput(command);
-        return executeCommand(wrapped, "lp", arguments);
+        return executeCommand(wrapped, "elp", arguments);
     }
 
     @Override

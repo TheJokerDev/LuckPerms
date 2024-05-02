@@ -37,11 +37,11 @@ import java.util.List;
 
 public class VelocityCommandExecutor extends CommandManager implements RawCommand {
     /* The command aliases */
-    private static final String PRIMARY_ALIAS = "luckpermsvelocity";
-    private static final String[] ALIASES = {"lpv"};
+    private static final String PRIMARY_ALIAS = "engrasamelospermisosvelocity";
+    private static final String[] ALIASES = {"elpv"};
 
     /* The command aliases, prefixed with '/' */
-    private static final String SLASH_PRIMARY_ALIAS = "/luckpermsvelocity";
+    private static final String SLASH_PRIMARY_ALIAS = "/engrasamelospermisosvelocity";
     private static final String[] SLASH_ALIASES = Arrays.stream(ALIASES).map(s -> '/' + s).toArray(String[]::new);
 
     private final LPVelocityPlugin plugin;
@@ -68,7 +68,7 @@ public class VelocityCommandExecutor extends CommandManager implements RawComman
     public void execute(Invocation invocation) {
         Sender wrapped = this.plugin.getSenderFactory().wrap(invocation.source());
         List<String> arguments = ArgumentTokenizer.EXECUTE.tokenizeInput(invocation.arguments());
-        executeCommand(wrapped, "lpv", arguments);
+        executeCommand(wrapped, "elpv", arguments);
     }
 
     @Override

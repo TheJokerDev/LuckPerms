@@ -228,26 +228,6 @@ public class CommandManager {
 
         // Handle no arguments
         if (arguments.isEmpty() || arguments.size() == 1 && arguments.get(0).trim().isEmpty()) {
-            sender.sendMessage(Message.prefixed(Component.text()
-                    .color(NamedTextColor.DARK_GREEN)
-                    .append(Component.text("Running "))
-                    .append(Component.text(AbstractLuckPermsPlugin.getPluginName(), NamedTextColor.AQUA))
-                    .append(Component.space())
-                    .append(Component.text("v" + this.plugin.getBootstrap().getVersion(), NamedTextColor.AQUA))
-                    .append(Message.FULL_STOP)
-            ));
-
-            if (hasPermissionForAny(sender)) {
-                Message.VIEW_AVAILABLE_COMMANDS_PROMPT.send(sender, label);
-                return;
-            }
-
-            Collection<? extends Group> groups = this.plugin.getGroupManager().getAll().values();
-            if (groups.size() <= 1 && groups.stream().allMatch(g -> g.normalData().isEmpty())) {
-                Message.FIRST_TIME_SETUP.send(sender, label, sender.getName());
-            } else {
-                Message.NO_PERMISSION_FOR_SUBCOMMANDS.send(sender);
-            }
             return;
         }
 
@@ -304,15 +284,6 @@ public class CommandManager {
     }
 
     private void sendCommandUsage(Sender sender, String label) {
-        sender.sendMessage(Message.prefixed(Component.text()
-                .color(NamedTextColor.DARK_GREEN)
-                .append(Component.text("Running "))
-                .append(Component.text(AbstractLuckPermsPlugin.getPluginName(), NamedTextColor.AQUA))
-                .append(Component.space())
-                .append(Component.text("v" + this.plugin.getBootstrap().getVersion(), NamedTextColor.AQUA))
-                .append(Message.FULL_STOP)
-        ));
-
         this.mainCommands.values().stream()
                 .filter(Command::shouldDisplay)
                 .filter(c -> c.isAuthorized(sender))

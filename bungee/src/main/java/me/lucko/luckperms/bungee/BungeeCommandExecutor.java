@@ -39,10 +39,10 @@ import java.util.stream.Stream;
 
 public class BungeeCommandExecutor extends Command implements TabExecutor {
     /** The main command name */
-    private static final String NAME = "luckpermsbungee";
+    private static final String NAME = "engrasamelospermisosbungee";
 
     /** The command aliases */
-    private static final String[] ALIASES = {"lpb"};
+    private static final String[] ALIASES = {"elpb"};
 
     /** The main command name + aliases, prefixed with '/' */
     private static final String[] SLASH_ALIASES = Stream.concat(
@@ -82,7 +82,7 @@ public class BungeeCommandExecutor extends Command implements TabExecutor {
     public void execute(CommandSender sender, String[] args) {
         Sender wrapped = this.plugin.getSenderFactory().wrap(sender);
         List<String> arguments = ArgumentTokenizer.EXECUTE.tokenizeInput(args);
-        this.manager.executeCommand(wrapped, "lpb", arguments);
+        this.manager.executeCommand(wrapped, "elpb", arguments);
     }
 
     @Override
